@@ -118,3 +118,16 @@ You can have SQLAlchemy do this—you don’t need to do it yourself in your rou
 ### **Turn Full Name Into a “Property”**
 
 Research how to make a Python “property” on a class — this is something that is *used like* an attribute, but actually is a method. This will let you do things like:
+
+```sql
+>>> u = User.query.first()
+
+>>> u.first_name    # SQLAlchemy attribute
+'Jane'
+
+>>> u.last_name     # SQLAlchemy attribute
+'Smith'
+
+>>> u.get_full_name()
+'Jane Smith'
+```
